@@ -1,0 +1,35 @@
+<h1>Expense Tracker</h1>
+<div class="box">
+  <section>
+    <h3>Summary</h3>
+    <p>Monthly Limit: $<%= session[:limit] %></p>
+    <p>Money Spent: $<%= session[:total_spent] %></p>
+  </section>
+</div>
+
+<br>
+
+<div>
+  <a href="/new">Add transaction</a>
+
+  <table>
+    <tr>
+      <th>Expense</th>
+      <th>Amount $</th>
+      <th>Category</th>
+      <th>Date</th>
+    </tr>
+    <% session[:expenses].list.each do |item| %>
+      <% if session[:expenses].list.empty? %>
+        <p><strong>No expenses.</strong></p>
+      <% else %>
+        <tr>
+          <td><%= item[:name] %></td>
+          <td><%= item[:amount] %></td>
+          <td><%= item[:category] %></td>
+          <td><%= item[:date] %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+</div>
