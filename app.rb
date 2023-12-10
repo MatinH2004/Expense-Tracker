@@ -42,10 +42,10 @@ post "/new/expense" do
 
   if valid_expense_input?(name, amount, category)
     session[:expenses].new_expense(name, amount, category)
-    session[:message] = "Expense added successfully."
+    session[:message] = "=> Expense added successfully."
     redirect "/"
   else
-    session[:message] = "Invalid input. Try again."
+    session[:message] = "=> Invalid input. Try again."
     status 422
     erb :new
   end
@@ -55,11 +55,11 @@ post "/new/category" do
   new_category = params[:category]
 
   if !(new_category.strip.size > 0)
-    session[:message] = "Category added successfully."
+    session[:message] = "=> Category name cannot be empty."
     erb :new
   else
     session[:categories] << params[:category]
-    session[:message] = "Category added successfully."
+    session[:message] = "=> Category added successfully."
     redirect "/new"
   end
 end
@@ -68,6 +68,6 @@ post "/delete/:id" do
   id = params[:id].to_i
 
   session[:expenses].delete_expense(id)
-  session[:message] = "Item deleted successfully."
+  session[:message] = "=> Item deleted successfully."
   redirect "/"
 end
