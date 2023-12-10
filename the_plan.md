@@ -5,6 +5,7 @@ This app will allow users to track their monthly expenses, set monthly goals and
 ## Main Page
 - Show total spending this month
 - Input new expense
+- Delete existing expense
 - See this month's expenses
 - Alert user when getting close to monthly limit
 

@@ -26,14 +26,16 @@ get "/" do
 end
 
 def valid_expense_input?(name, amount, category)
-  name.strip.size > 0 && amount.to_i >= 0 && (1..session[:categories].size).include?(category.to_i)
+  name.strip.size > 0 && 
+  amount.to_i >= 0 && 
+  (1..session[:categories].size).include?(category.to_i)
 end
 
 get "/new" do
   erb :new
 end
 
-post "/new" do
+post "/new/item" do
   name = params[:name]
   amount = params[:amount]
   category = params[:category]
@@ -48,3 +50,21 @@ post "/new" do
     erb :new
   end
 end
+
+post "/new/category" do
+  new_category = params[:category]
+
+  if !(new_category.strip.size > 0)
+    session[:message] = "Category added successfully."
+    erb :new
+  else
+    session[:categories] << params[:category]
+    session[:message] = "Category added successfully."
+    redirect "/new"
+  end
+end
+
+
+
+# Build delete function (- using item ids)
+# add new category
