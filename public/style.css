@@ -1,0 +1,29 @@
+.message {
+  background-color: #d1cfcf;
+  font-weight: bold;
+  padding: 15px;
+}
+
+.box {
+  width: 200px;
+  background-color: #f0f0f0;
+  border: 2px solid #333;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
