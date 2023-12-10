@@ -35,7 +35,7 @@ get "/new" do
   erb :new
 end
 
-post "/new/item" do
+post "/new/expense" do
   name = params[:name]
   amount = params[:amount]
   category = params[:category]
