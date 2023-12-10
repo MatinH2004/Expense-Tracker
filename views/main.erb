@@ -18,6 +18,7 @@
       <th>Amount $</th>
       <th>Category</th>
       <th>Date</th>
+      <th>Delete Item</th>
     </tr>
     <% session[:expenses].list.each do |item| %>
       <% if session[:expenses].list.empty? %>
@@ -28,6 +29,11 @@
           <td><%= item[:amount] %></td>
           <td><%= item[:category] %></td>
           <td><%= item[:date] %></td>
+          <td>
+            <form method="post" action="/delete/<%= item[:id] %>">
+              <button type="submit">Delete</button>
+            </form>
+          </td>
         </tr>
       <% end %>
     <% end %>

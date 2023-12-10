@@ -64,7 +64,10 @@ post "/new/category" do
   end
 end
 
+post "/delete/:id" do
+  id = params[:id].to_i
 
-
-# Build delete function (- using item ids)
-# add new category
+  session[:expenses].delete_expense(id)
+  session[:message] = "Item deleted successfully."
+  redirect "/"
+end
