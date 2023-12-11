@@ -58,7 +58,8 @@ post "/new/category" do
     session[:message] = "=> Category name cannot be empty."
     erb :new
   else
-    session[:categories] << params[:category]
+    session[:expenses].new_category(params[:category].capitalize)
+    session[:categories] = session[:expenses].categories
     session[:message] = "=> Category added successfully."
     redirect "/new"
   end
@@ -71,3 +72,5 @@ post "/delete/:id" do
   session[:message] = "=> Item deleted successfully."
   redirect "/"
 end
+
+# Problem - new categories not showing up.

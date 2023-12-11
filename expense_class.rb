@@ -47,7 +47,7 @@ class Expenses
   end
 
   def categories
-    @@categories.dup
+    @@categories
   end
   
   def new_category(category)
