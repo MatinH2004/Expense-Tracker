@@ -4,7 +4,7 @@ class Expenses
   @@categories = ['Dining/Grocery', 'Entertainment', 'Bills', 'Investments']
 
   attr_accessor :limit
-  attr_reader :list
+  attr_reader :list, :month
 
   def initialize(month, limit=2000)
     @list = []
