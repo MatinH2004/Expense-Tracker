@@ -5,6 +5,10 @@
   <link rel="stylesheet" href="/style.css" type="text/css">
 
   <body>
+    <% if session[:limit_message] %>
+      <p class="limit-message"><%= session.delete(:limit_message) %></p>
+    <% end %>
+
     <% if session[:message] %>
       <p class="message"><%= session.delete(:message) %></p>
     <% end %>

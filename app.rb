@@ -12,22 +12,28 @@ configure do
   set :erb, :escape_html => true
 end
 
+def display_limit_message
+  if session[:expenses].exceeded_limit?
+    session[:limit_message] = "You have exceeded your limit."
+  end
+end
+
 get "/" do
   unless session[:expenses]
-    current_month = Time.now.strftime("%B")
-    session[:expenses] = Expenses.new(current_month)
+    session[:expenses] = Expenses.new
     session[:categories] = session[:expenses].categories
     session[:limit] = session[:expenses].limit
   end
 
   session[:total_spent] = session[:expenses].total_list_amount
+  display_limit_message
 
   erb :main
 end
 
 def valid_expense_input?(name, amount, category)
   name.strip.size > 0 && 
-  amount.to_i >= 0 && 
+  amount.to_i.to_s == amount && 
   (1..session[:categories].size).include?(category.to_i)
 end
 
@@ -73,4 +79,5 @@ post "/delete/:id" do
   redirect "/"
 end
 
-# Problem - new categories not showing up.
+# next
+#   - change limit

@@ -4,6 +4,12 @@
   padding: 15px;
 }
 
+.limit-message {
+  background-color: #fa4d4d;
+  font-weight: bold;
+  padding: 15px;
+}
+
 .box {
   width: 200px;
   background-color: #f0f0f0;
@@ -15,7 +21,7 @@
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  width: 70%;
 }
 
 td, th {
