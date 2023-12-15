@@ -32,8 +32,8 @@ get "/" do
 end
 
 def valid_expense_input?(name, amount, category)
-  name.strip.size > 0 && 
-  amount.to_i.to_s == amount && 
+  (name.strip.size > 0) &&
+  (amount.match?(/\A\d+(\.\d+)?\z/)) &&
   (1..session[:categories].size).include?(category.to_i)
 end
 
@@ -79,5 +79,15 @@ post "/delete/:id" do
   redirect "/"
 end
 
+get "/change_limit" do
+  erb :change_limit
+end
+
+post "/change_limit" do
+
+end
+
 # next
+#   - welcome page (enter name and info)
+#   - 
 #   - change limit
