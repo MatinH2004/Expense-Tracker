@@ -49,3 +49,5 @@ Start the application:
 `ruby app.rb`
 
 Open your web browser and go to `http://localhost:4567`. Start managing your expenses! Enjoy :)
+
+PS: excuse the bad styling. I haven't fully learned CSS yet hahaha...
