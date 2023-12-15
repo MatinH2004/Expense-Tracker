@@ -84,7 +84,16 @@ get "/change_limit" do
 end
 
 post "/change_limit" do
-
+  new_limit = params[:new_limit]
+  
+  if new_limit.match?(/\A\d+(\.\d+)?\z/)
+    session[:message] = "=> Limit changed successfully."
+    session[:limit] = new_limit
+    redirect "/"
+  else
+    session[:message] = "=> Invalid input. Try again."
+    erb :change_limit
+  end
 end
 
 # next
