@@ -1,17 +1,20 @@
-<h1>Expense Tracker</h1>
-<div class="box">
+<h1 class="title">Basic Expense Tracker</h1>
+<div class="main">
   <section>
-    <h3>Summary</h3>
-    <p>Goal: $<%= session[:limit] %></p>
-    <p>You've Spent: $<%= session[:total_spent] %></p>
+    <h2>You've Spent: $<%= session[:total_spent] %></h2>
+    <p class="limit">Limit: $<%= session[:limit] %></p>
   </section>
+  <a class="button" href="/new">Add transaction</a>
+  <a class="button" href="/change_limit">Change limit</a>
+</div>
+
+<div>
+  
 </div>
 
 <br>
 
 <div>
-  <a href="/new">Add transaction</a>
-
   <table>
     <tr>
       <th>Expense</th>
