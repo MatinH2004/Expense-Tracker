@@ -1,4 +1,4 @@
-# Basic Expense Tracker App
+# Expense Tracker App
 
 [Check it out here](https://ls-expense-tracker-da16a2ab001c.herokuapp.com)
 
@@ -20,13 +20,13 @@ Responsive Design: The app is designed to work seamlessly on various devices, al
 
 Make sure you have the following installed on your machine:
 
-Ruby
+- Ruby (3.2.0)
 
-Sinatra gem 
+- Sinatra gem 
 
-Bundler gem
+- Bundler gem
 
-Web browser (Google Chrome, Mozilla Firefox, Safari, etc.)
+- Web browser (Google Chrome, Mozilla Firefox, Safari, etc.)
 
 ### Installation
 
